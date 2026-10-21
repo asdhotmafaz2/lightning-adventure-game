@@ -1,0 +1,337 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    touch-action: none;
+    user-select: none;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0a0e1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.game-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ============================================
+   رأس اللعبة (Header)
+   ============================================ */
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #c084fc;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
+
+.zap-icon {
+    font-size: 2.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #a78bfa;
+}
+
+/* ============================================
+   شريط الإحصائيات (Stats)
+   ============================================ */
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    background-color: #1a1f2e;
+    border: 2px solid #7c3aed;
+    border-radius: 8px;
+    padding: 20px 30px;
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+	min-height:150px;
+	overflow:hidden;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #a78bfa;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #c084fc;
+}
+
+/* ============================================
+   منطقة اللعبة (Canvas)
+   ============================================ */
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+#gameCanvas {
+    border: 2px solid #6b5b95;
+    border-radius: 8px;
+    background-color: #0a0e1a;
+    width: 750PX;
+    height: auto;
+    display: block;
+}
+
+/* ============================================
+   الأزرار (Buttons)
+   ============================================ */
+
+.controls-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: none;
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+.btn-primary {
+    background-color: #7c3aed;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #6d28d9;
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+}
+
+.btn-warning {
+    background-color: #ca8a04;
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #b8860b;
+    box-shadow: 0 0 15px rgba(202, 138, 4, 0.5);
+}
+
+.btn-success {
+    background-color: #16a34a;
+    color: white;
+    width: 100%;
+}
+
+.btn-success:hover {
+    background-color: #15803d;
+    box-shadow: 0 0 15px rgba(22, 163, 74, 0.5);
+}
+
+/* ============================================
+   رسالة الخسارة (Game Over)
+   ============================================ */
+
+.game-over-message {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #1a1f2e;
+    border: 2px solid #dc2626;
+    border-radius: 8px;
+}
+
+.game-over-content {
+    padding: 20px;
+}
+
+.game-over-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f87171;
+    margin-bottom: 15px;
+}
+
+.game-over-text {
+    font-size: 1.1rem;
+    color: #c084fc;
+    margin-bottom: 10px;
+}
+
+/* ============================================
+   التعليمات (Instructions)
+   ============================================ */
+
+.instructions {
+    background-color: #1a1f2e;
+    border: 2px solid #7c3aed;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.instructions h2 {
+    font-size: 1.3rem;
+    color: #c084fc;
+    margin-bottom: 15px;
+}
+
+.instructions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.instructions li {font-size: 1rem;
+    color: #a78bfa;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.instructions li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #7c3aed;
+}
+
+/* ============================================
+   الاستجابة (Responsive)
+   ============================================ */
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .zap-icon {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .stat-box {
+        padding: 15px 20px;
+    }
+
+    .stat-value {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    #gameCanvas {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .zap-icon {
+        font-size: 1.2rem;
+    }
+
+    .stats-container {
+        flex-direction: column;
+    }
+
+    .stat-box {
+        min-width: 100%;
+    }
+
+    .instructions {
+        padding: 15px;
+    }
+
+    .instructions li {
+        font-size: 0.9rem;
+    }
+}
+canvas {
+    touch-action: none;
+}
+/* ============================================
+   الرسوميات والتأثيرات
+   ============================================ */
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.stat-box {
+    animation: pulse 2s infinite;
+    animation-play-state: paused;
+}
+
+.stat-box:hover {
+    animation-play-state: running;
+}

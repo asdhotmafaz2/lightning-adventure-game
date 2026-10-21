@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة الصاعقة المطورة</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-wrapper">
+            <div class="header">
+                <h1 class="title">
+                    <span class="zap-icon">⚡</span>
+                    لعبة الصاعقة
+                    <span class="zap-icon">⚡</span>
+                </h1>
+                <p class="subtitle">تجاوز العقبات واجمع الصواعق من اليسار لليمين!</p>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-box">
+                    <p class="stat-label">النقاط</p>
+                    <p class="stat-value" id="score">0</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-label">المرحلة</p>
+                    <p class="stat-value" id="level">1</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-label">نقاط المرحلة</p>
+                    <p class="stat-value" id="levelScore">0/15</p>
+                </div>
+            </div>
+
+            <div class="canvas-container">
+                <canvas id="gameCanvas" width="750" height="500"></canvas>
+            </div>
+
+            <div class="controls-container">
+                <button id="startBtn" class="btn btn-primary">
+                    <span class="btn-icon">⚡</span>
+                    ابدأ اللعبة
+                </button>
+                <button id="pauseBtn" class="btn btn-warning" style="display: none;">
+                    إيقاف
+                </button>
+                <button id="restartBtn" class="btn btn-success" style="display: none;">
+                    <span class="btn-icon">🔄</span>
+                    إعادة اللعبة
+                </button>
+            </div>
+
+            <div id="gameOverMessage" class="game-over-message" style="display: none;">
+                <div class="game-over-content">
+                    <p class="game-over-title">💀 لقد خسرت!</p>
+                    <p class="game-over-text">النقاط النهائية: <span id="finalScore">0</span></p>
+                    <p class="game-over-text">وصلت إلى المرحلة: <span id="finalLevel">1</span></p>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h2>التعليمات:</h2>
+                <ul>
+                    <li>🎮 استخدم الأسهم ↑↓ أو W/S للحركة لأعلى وأسفل</li>
+                    <li>⚡ اجمع الصواعق الوردية الفاتحة لزيادة النقاط</li>
+                    <li>🚫 تجنب العقبات الأرجوانية والسوداء</li>
+                    <li>📈 اجمع 15 صاعقة لتصعد للمرحلة التالية (أسرع وأصعب!)</li>
+                    <li>⚠️ الشخصية تتحرك من اليسار لليمين، لا تصطدم بأي عقبة!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
